@@ -15,6 +15,10 @@ echo $TOKEN_PWD | docker login --username $TOKEN_NAME --password-stdin $3
 
 echo "Pushing image: $4"
 
+docker pull hello-world
+
+docker tag hello-world $4
+
 docker push $4
 
 echo "::set-output name=time::$time"
