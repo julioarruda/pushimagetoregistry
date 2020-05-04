@@ -1,0 +1,27 @@
+name: 'Push Image to ACR'
+description: 'Push your Docker Image to ACR'
+inputs:
+  acr-tokenname:  # token to auht acr
+    description: 'ACR Token Name with push permission'
+    required: true
+
+  acr-token:  # token to auht acr
+    description: 'ACR Token with push permission'
+    required: true
+
+  acr-account:  # name of acr
+    description: 'ACR Account Name'
+    required: true
+
+  acr-imagename:  # name of acr
+    description: 'ACR Image Name'
+    required: true
+ 
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.acr-tokenname }}
+    - ${{ inputs.acr-token }}
+    - ${{ inputs.acr-account }}
+    - ${{ inputs.acr-imagename }}
