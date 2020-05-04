@@ -31,6 +31,6 @@ jobs:
         acr-tokenname: ${{ secrets.ACR_TOKEN_NAME }}
         acr-token: ${{ secrets.ACR_TOKEN_VALUE }}
         acr-account: myregistry.azurecr.io
-        imagename: myregistry.azurecr.io/hello-world:v1
+        acr-imagename: myregistry.azurecr.io/hello-world:v1
 
 ```
