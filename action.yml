@@ -1,5 +1,6 @@
 name: 'Push Image to ACR'
 description: 'Push your Docker Image to ACR'
+author: "julio.arruda@outlook.com"
 inputs:
   acr-tokenname:  # token to auht acr
     description: 'ACR Token Name with push permission'
@@ -25,3 +26,7 @@ runs:
     - ${{ inputs.acr-token }}
     - ${{ inputs.acr-account }}
     - ${{ inputs.acr-imagename }}
+
+branding:
+  icon: "upload-cloud"
+  color: "blue"
