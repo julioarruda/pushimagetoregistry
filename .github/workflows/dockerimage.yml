@@ -23,7 +23,7 @@ jobs:
       run: docker build . --file base/Dockerfile --tag ${{ env.ImageName }}
 
     - name: Push Image to GitHub Packages
-      uses: julioarruda/pushimagetoregistry@v2
+      uses: julioarruda/pushimagetoregistry@v1
       with:
         acr-tokenname: julioarruda
         acr-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN_PACKAGES }}
