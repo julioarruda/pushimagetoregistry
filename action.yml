@@ -1,21 +1,21 @@
-name: 'Push Image to ACR'
+name: 'Push Docker Image'
 description: 'Push your Docker Image to ACR'
 author: "julio.arruda@outlook.com"
 inputs:
   acr-tokenname:  # token to auht acr
-    description: 'ACR Token Name with push permission'
+    description: 'Username Name with push permission'
     required: true
 
   acr-token:  # token to auht acr
-    description: 'ACR Token with push permission'
+    description: 'Token/PWD with push permission'
     required: true
 
   acr-account:  # name of acr
-    description: 'ACR Account Name'
+    description: 'Docker Account Name'
     required: true
 
   acr-imagename:  # name of acr
-    description: 'ACR Image Name'
+    description: 'Docker Image Name'
     required: true
  
 runs:

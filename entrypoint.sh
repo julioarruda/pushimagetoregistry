@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-echo "Hello, today i will help you to upload your Docker Images to ACR (or i hope do this)."
+echo "Hello, today i will help you to upload your Docker Images to registry (or i hope do this)."
 
 error_exit()
 {
