@@ -1,4 +1,4 @@
-# Push Image to ACR
+# Push Image to Your Own Registry
 
 This action push your docker image to private Registry .
 
