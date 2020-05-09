@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  dockerImageName: docker.pkg.github.com/julioarruda/pushimagetoregistry/ubuntu1804:$(date +%s)
+
 jobs:
 
   build:
@@ -15,12 +18,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file base/Dockerfile --tag docker.pkg.github.com/julioarruda/pushimagetoregistry/ubuntu1804:$(date +%s)
+      run: docker build . --file base/Dockerfile --tag ${{ env.dockerImageName }}
 
-    - name: Push Image to ACR
+    - name: Push Image to GitHub Packages
       uses: julioarruda/pushimagetoregistry@v0
       with:
         acr-tokenname: julioarruda
         acr-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN_PACKAGES }}
         acr-account: docker.pkg.github.com
-        acr-imagename: docker.pkg.github.com/julioarruda/pushimagetoregistry/ubuntu1804:$(date +%s)
+        acr-imagename: ${{ env.dockerImageName }}
