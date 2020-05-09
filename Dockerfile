@@ -1,4 +1,4 @@
-FROM julioarruda/ubuntu1804:14
+FROM docker.pkg.github.com/julioarruda/pushimagetoregistry/ubuntu1804:1589062404
 
 COPY entrypoint.sh /entrypoint.sh
 

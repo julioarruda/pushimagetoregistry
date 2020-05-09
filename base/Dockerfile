@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/julioarruda/pushimagetoregistry/ubuntu1804:1589062404
+FROM ubuntu:18.04
 
 RUN apt-get update
 RUN apt-get -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common gnupg wget
