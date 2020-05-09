@@ -16,9 +16,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set-ImageVersion
+      run: echo "::set-env name=ImageName::${{ env.dockerImageName }}"
+
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file base/Dockerfile --tag ${{ env.dockerImageName }}
+      run: docker build . --file base/Dockerfile --tag ${{ env.ImageName }}
 
     - name: Push Image to GitHub Packages
       uses: julioarruda/pushimagetoregistry@v0
@@ -26,4 +29,4 @@ jobs:
         acr-tokenname: julioarruda
         acr-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN_PACKAGES }}
         acr-account: docker.pkg.github.com
-        acr-imagename: ${{ env.dockerImageName }}
+        acr-imagename: ${{ env.ImageName }}
