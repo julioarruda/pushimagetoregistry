@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Push Image to ACR
-      uses: julioarruda/pushimagetoacr@v0
+      uses: julioarruda/pushimagetoregistry@v1
       with:
         acr-tokenname: ${{ secrets.ACR_TOKEN_NAME }}
         acr-token: ${{ secrets.ACR_TOKEN_VALUE }}
